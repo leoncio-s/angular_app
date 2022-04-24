@@ -1,0 +1,84 @@
+<!-- NAVBAR COM UM FORMULÁRIO DE PESQUISA ONDE IRÁ CHAMAR A FUNÇÃO PESQUISA QUE VAI RETORNAR O ITEM QUE CORRESPONDEM COM A PESQUISA -->
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ATIVIDADE UNINTER</a>
+    <form #searchForm="ngForm" (ngSubmit)="pesquisar()" class="d-flex">
+      <input type="search" name="alunoSearch" class="form-control me-2" [(ngModel)]="alunoSearch" placeholder="Pesquisar por nome, curso ou RU" aria-label="Pesquisar" style="width: 300px;">
+      <button class="btn btn-secondary" type="submit"><i class="bi bi-search"></i><span style="margin-left: 5px;">Pesquisar</span></button>
+    </form>
+  </div>
+</nav>
+
+<div class="container" style="padding-top: 30px;">
+  <!-- GRUPO DE BOTÕES QUE VAI LISTAR TODOS OS ALUNOS CADASTRADOS OU ADICIONAR UM NOVO ANULO DEPENDENDO DO BOTÃO QUE FOR CLICADO -->
+  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+  
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btnradio1" (click)="listarTodos()">Listar Todos os Alunos</label>
+    
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btnradio2" (click)="novoAluno=!novoAluno;erro=''; retorno=[]; success=false">Novo Aluno</label>
+  
+    
+  </div>
+
+  <!-- EXIBE UMA MENSAGEM DE SUCESS -->
+  <div class="alert alert-success" style="margin-top: 15px;" *ngIf="success">
+    {{message}}
+  </div>
+
+  <!-- VAI VERIFICAR SE O OBJETO RETORNO POSSUEM ITENS, CASO NÃO POSSUA IRA RETORNAR UMA MESAGEM DE ERRO -->
+  <div class="shadow-lg mx4" *ngIf="retorno.length > 0; else erroBlock" style="margin-top: 20px;">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">RU</th>
+          <th scope="col">Curso</th>
+        </tr>
+      </thead>
+      <!-- PERCORRE O OBJETO RETORNO E EBIBE AS INFORMAÇÕES NA TELA -->
+      <tbody *ngFor="let data of retorno">
+        <tr>
+          <th scope="row">{{ data.id }}</th>
+          <td>{{ data.nome }}</td>
+          <td>{{ data.ru }}</td>
+          <td>{{ data.curso }} </td>
+          <td><button class='btn' style="color: red;" title='Deletar Cadastro' aria-label="Deletar Cadastro" (click)="deletar(data.id)"><i class="bi bi-trash3"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BLOCO QUE SERÁ RETORNADO CASO NÃO EXISTA NENHUM OBJETO EM RETORNO -->
+  <ng-template #erroBlock>
+    <div class="alert alert-danger" style="margin-top: 20px;" *ngIf="erro!=''">{{erro}}</div>
+  </ng-template>
+
+  <!-- FORMULÁRIO PARA ADICIONAR UM NOVO ALUNO -->
+  <div class="row" style="margin-top: 15px;" *ngIf="novoAluno">
+    <form #novoAlunoForm="ngForm" (ngSubmit)="salvar(novoAlunoForm)" ngNativeValidate>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="nomealuno" class="form-label">Nome do Aluno</label>
+          <input type="text" class="form-control" name="nome" ngModel id="nomealuno" required #nome="ngModel">
+        </div>
+        <div class="col-md-6">
+          <label for="rualuno" class="form-label">RU do Aluno</label>
+          <input type="text" class="form-control" id="rualuno" required name="ru" ngModel #ru="ngModel" pattern="\d*" oninput="this.value = this.value.replace(/\D/g, '')" minlength="5" maxlength="8">
+        </div>
+
+        <div class="col-12" style="margin-top: 5px;">
+          <label for="cursoaluno" class="form-label">Curso do Aluno</label>
+          <input type="text" class="form-control" id="cursoaluno" placeholder="Análise e Desenvolvimento" required name="curso" ngModel #curso="ngModel">
+        </div>
+
+        <div class="col-12" style="margin-top: 15px;">
+          <button class="btn btn-primary">Salvar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
