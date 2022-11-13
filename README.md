@@ -1,7 +1,17 @@
-# AppAds
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
-
 ## O Aplicativo
 
-Este aplicativo é uma atividade realizada conforme solicitação feita na disciplina de Ferramentas de Desenvolvimento Web, do curso de Analise e Desenvolvimento Web.
+Este aplicativo consiste em reproduzir a operação de CRUD(Create, Read, Update and Delete) em uma aplicação real, utilizando Angluar 13 e Typescript
+
+### Página inicial da aplicação
+![Página Inicial](https://imgur.com/ln0EH4d)
+
+### Inclusão de um novo registro
+![Inclusão](https://imgur.com/RjrHLxQ)
+![Iclusão2](https://imgur.com/zu6liV8)
+
+### Lista todos e remove um registro
+![Lista Todos os registros](https://imgur.com/oyJ1CO6)
+![Exclui um registro](https://imgur.com/oQ7TbcL)
+
+### Pesquisa um registro com base no nome, RU ou Nome do curso
+![Pesquisa](https://imgur.com/nawn2aX)
