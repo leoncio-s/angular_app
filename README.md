@@ -3,7 +3,7 @@
 Este aplicativo consiste em reproduzir a operação de CRUD(Create, Read, Update and Delete) em uma aplicação real, utilizando Angluar 13 e Typescript
 
 ### Página inicial da aplicação
-![Página Inicial](https://imgur.com/ln0EH4d)
+![Página Inicial](https://imgur.com/d7f3vka)
 
 ### Inclusão de um novo registro
 ![Inclusão](https://imgur.com/RjrHLxQ)
