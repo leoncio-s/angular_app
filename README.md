@@ -6,12 +6,12 @@ Este aplicativo consiste em reproduzir a operação de CRUD(Create, Read, Update
 ![Página Inicial](https://i.imgur.com/d7f3vka.jpeg)
 
 ### Inclusão de um novo registro
-![Inclusão](https://imgur.com/RjrHLxQ)
-![Iclusão2](https://imgur.com/zu6liV8)
+![Inclusão](https://i.imgur.com/8K4ijiz.jpeg)
+![Iclusão2](https://i.imgur.com/cpOAQPx.jpeg)
 
 ### Lista todos e remove um registro
-![Lista Todos os registros](https://imgur.com/oyJ1CO6)
-![Exclui um registro](https://imgur.com/oQ7TbcL)
+![Lista Todos os registros](https://imgur.com/oyJ1CO6.jpeg)
+![Exclui um registro](https://imgur.com/oQ7TbcL.jpeg)
 
 ### Pesquisa um registro com base no nome, RU ou Nome do curso
-![Pesquisa](https://imgur.com/nawn2aX)
+![Pesquisa](https://imgur.com/nawn2aX.jpeg)
